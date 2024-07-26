@@ -9,6 +9,7 @@ class EnigmaModel:
     def __init__(self):
         """Creates a new EnigmaModel with no views."""
         self._views = [ ]
+        self.key_status = {chr(key): False for key in range(ord('A'), ord('Z') + 1)}
 
     def add_view(self, view):
         """Adds a view to this model."""
@@ -20,17 +21,17 @@ class EnigmaModel:
             view.update()
 
     def is_key_down(self, letter):
-        return False        # In the stub version, keys are never down
+        return self.key_status[letter]
 
     def is_lamp_on(self, letter):
         return False        # In the stub version, lamps are always off
 
     def key_pressed(self, letter):
-        # You need to fill in this code
+        self.key_status[letter] = True
         self.update()
 
     def key_released(self, letter):
-        # You need to fill in this code
+        self.key_status[letter] = False
         self.update()
 
     def get_rotor_letter(self, index):
