@@ -8,6 +8,7 @@ graphics for the Enigma simulator.
 import atexit
 import tkinter
 import tkinter.font
+from EnigmaConstants import ALPHABET
 
 class EnigmaView:
     """This class creates the Enigma view, which maintains the display."""
@@ -192,7 +193,6 @@ class EnigmaView:
         
 # Constants
 
-ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWZYZ"
 N_ROTORS = 3
 
 CANVAS_WIDTH = 818              # Width of the tkinter canvas (pixels)
